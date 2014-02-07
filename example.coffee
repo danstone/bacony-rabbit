@@ -1,8 +1,7 @@
 rabbit = require 'rabbit.js'
-bacon = require 'bacon'
-bacon.rabbit = require 'bacony-rabbit'
+bacon = require 'baconjs'
+bacon.rabbit = require './bacony-rabbit.js'
 _ = require 'lodash'
-
 
 context = rabbit
 	.createContext()
@@ -21,7 +20,7 @@ mapValues = (map, f) ->
 
 context.on 'ready', ->
 	streams = 
-		bacons: 'bacon'
+		bacon: 'bacon'
 		sausages: 'sausage'
 		eggs: 'eggs'
 		hashbrowns: 'hash-browns'
@@ -33,5 +32,4 @@ context.on 'ready', ->
 			[streams.beans, streams.hashbrowns], -> 'yum'
 			[streams.bacon, streams.sausages], -> 'thats a pretty good breakfast')
 
-	stream = streams.beans
 	stream.log()

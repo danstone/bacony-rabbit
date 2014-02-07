@@ -1,5 +1,4 @@
 bacon = require 'baconjs'
-_ = require 'lodash'
 
 errorCtor = (x) -> new bacon.Error x
 fromData = (sub) ->
